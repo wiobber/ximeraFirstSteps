@@ -1,0 +1,55 @@
+\documentclass[numbers]{xourse}
+
+
+
+\title{User Manual}
+\date{2024}
+\author{Jim Fowler \and Wim Obbels \and Jason Nowell\and Bart Snapp}
+
+\input{preamble}
+\input{../KUStyle/preamble}
+\printcontinuouspagenumberstrue
+
+\addPrintStyle{../KUStyle}
+
+
+%\pdfOnly{\usepackage{manual}}
+
+\colorfalse
+%\colortrue
+
+%\pdfOnly{\input{coverArt/frontCover.tex}}
+
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{3} 
+\titleformat{\paragraph}[hang]{\normalfont\bfseries}{\theparagraph}{1em}{}
+\renewcommand{\thetitlenumber}{\arabic{titlenumber}}
+
+\begin{document}
+\begin{abstract}
+   How to use Ximera.
+\end{abstract}
+\maketitle
+%\pdfOnly{\pagestyle{fancy}}
+%\twocolumn
+\frontstyle
+\activity{introduction/introduction}
+\chapterstyle
+\activity{setup/setup}
+\activity{workflow/workflow}
+\activity{commonUseCases/commonUseCases}
+\activity{graphicsVideosAndInteractives/graphicsVideosAndInteractives}
+\activity{rendering/rendering}
+\activity{progressAndCredit/progressAndCredit}
+\activity{printing/printing}
+\activity{seeXimeraInAction/seeXimeraInAction}
+
+% Alternative structure using \part  (which allows more easily for grouping more but smaller activities)
+\part{Workflow}
+\activity{workflow/tools}
+\activity{workflow/deploying}
+\sectionstyle
+\activity{workflow/commonIssues}
+
+\pdfOnly{\onecolumn\colorlet{bkgndcr}{otherbkgndcr}\colorlet{txtcr}{othertxtcr}\input{coverArt/backCover}}
+\end{document}
