@@ -241,7 +241,7 @@ then
     echo  "pdfTeXing $FILE (xmlatex $*)"
     debug pdflatex -file-line-error -shell-escape -jobname=${FILE%.tex} "\nonstopmode\input{$FILE}"
           pdflatex -file-line-error -shell-escape -jobname=${FILE%.tex} "\nonstopmode\input{$FILE}"
-
+    exit 0   # very dubious
 elif [[ "$COMMAND" == "bake" ]]
 then
     # files with beamer are IGNORED by bake and bakePdf   (should only be compiled to pdf, not html)
