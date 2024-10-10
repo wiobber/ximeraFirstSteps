@@ -4,8 +4,8 @@
 		// "image": "ghcr.io/ximeraproject/xake2024:latest",
 		"dockerComposeFile": ["docker-compose.yml"],
 		"service": "app",
-		"workspaceFolder": "/workspace",
-		// "forwardPorts": [2000],  // Port to access the web server
+		"workspaceFolder": "/code",
+		"forwardPorts": [2088],  // Port to access the web server
 		"remoteEnv": {
 		  "DEV_MODE": "true"
 		},
