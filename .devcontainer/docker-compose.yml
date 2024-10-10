@@ -2,22 +2,26 @@ version: '3.8'
 
 services:
   app:
-    image: ghcr.io/ximeraproject/xake2024:latest # 
+    image: ghcr.io/ximeraproject/xake2024:latest   
+    volumes:
+      # This is where VS Code should expect to find your project's source code and the value of "workspaceFolder" in .devcontainer/devcontainer.json
+      - ..:/workspace:cached
     # volumes:
     #   - .:/workspace:cached
-    # command: /bin/sh -c "npm install && npm start"  # Customize command as needed
+    command: /bin/sh -c "while sleep 1000; do :; done"  
     # environment:
     #   - NODE_ENV=development
     # ports:
     #   - "3000:3000"  # Expose app's port (your Node.js app port)
-  web:
+    network_mode: service:ximeraserver
+  ximeraserver:
     image: registry.gitlab.kuleuven.be/wet/ximera/ximeradocker:2.3.7j    # Using a specific Nginx image
     ports:
-      - "2080:2000"          # Expose Nginx on port 8080
+      - "2000:2000"          # Expose Nginx on port 8080
     # volumes:
     #   - ./nginx:/etc/nginx/conf.d  # Nginx configuration files or static files
-    networks:
-      - devnet             # Custom network for container communication
-networks:
-  devnet:
-    driver: bridge
+#     networks:
+#       - devnet             # Custom network for container communication
+# networks:
+#   devnet:
+#     driver: bridge
