@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   app:
-  	image: ghcr.io/ximeraproject/xake2024:latest # 
+    image: ghcr.io/ximeraproject/xake2024:latest # 
     # volumes:
     #   - .:/workspace:cached
     # command: /bin/sh -c "npm install && npm start"  # Customize command as needed
