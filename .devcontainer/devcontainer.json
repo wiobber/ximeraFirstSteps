@@ -5,7 +5,7 @@
 		"dockerComposeFile": ["docker-compose.yml"],
 		"service": "app",
 		"workspaceFolder": "/workspace",
-		"forwardPorts": [2000],  // Port to access the web server
+		// "forwardPorts": [2000],  // Port to access the web server
 		"remoteEnv": {
 		  "DEV_MODE": "true"
 		},
