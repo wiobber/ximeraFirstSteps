@@ -2,42 +2,33 @@
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "2.0.0",
+    "command": "xmlatex",
+    "windows": {
+        "command": ".\\scripts\\xmlatex.bat"
+    },    
+    "problemMatcher": [],
     "tasks": [
         {
             "type": "shell",
-            "label": "PDF",
-            "command": "./scripts/xmlatex",
-            "windows": {
-                "command": ".\\scripts\\xmlatex.bat"
-            },
+            "label": "xPDF",
             "args": [
                 "compilePdf",
                 "${relativeFile}"
             ],
-            "problemMatcher": []
         },
         {
             "type": "shell",
             "label": "HTML",
-            "command": "./scripts/xmlatex",
-            "windows": {
-                "command": ".\\scripts\\xmlatex.bat"
-            },
             "args": [
                 "--",
                 "--skip-mathjax",
                 "compile",
                 "${relativeFile}"
             ],
-            "problemMatcher": []
         },
         {
             "type": "shell",
             "label": "Bake",
-            "command": "./scripts/xmlatex",
-            "windows": {
-                "command": ".\\scripts\\xmlatex.bat"
-            },
             "args": [
                 "--",
                 "--skip-mathjax",
@@ -48,26 +39,16 @@
         {
             "type": "shell",
             "label": "Serve",
-            "command": "./scripts/xmlatex",
-            "windows": {
-                "command": ".\\scripts\\xmlatex.bat"
-            },
             "args": [
                 "serve"
             ],
-            "problemMatcher": []
         },        
         {
             "type": "shell",
             "label": "Start Ximera Server",
-            "command": "./scripts/xmlatex",
-            "windows": {
-                "command": ".\\scripts\\xmlatex.bat"
-            },
             "args": [
                 "ximeraserver"
             ],
-            "problemMatcher": []
         },
         {
                 "label": "Preview in Simple Browser",
@@ -76,63 +57,38 @@
         {
             "type": "shell",
             "label": "Bake standard",
-            "command": "./scripts/xmlatex",
-            "windows": {
-                "command": ".\\scripts\\xmlatex.bat"
-            },
             "args": [
                 "bakestandaard"
             ],
-            "problemMatcher": []
         },
         {
             "type": "shell",
             "label": "Bake handout",
-            "command": "./scripts/xmlatex",
-            "windows": {
-                "command": ".\\scripts\\xmlatex.bat"
-            },
             "args": [
                 "bakehandout"
             ],
-            "problemMatcher": []
         },
         {
             "type": "shell",
             "label": "Delete standard",
-            "command": "./scripts/xmlatex",
-            "windows": {
-                "command": ".\\scripts\\xmlatex.bat"
-            },
             "args": [
                 "cleanstandaard"
             ],
-            "problemMatcher": []
         },
         {
             "type": "shell",
             "label": "Delete handout",
-            "command": "./scripts/xmlatex",
-            "windows": {
-                "command": ".\\scripts\\xmlatex.bat"
-            },
             "args": [
                 "cleanhandout"
             ],
-            "problemMatcher": []
         },
         {
             "type": "shell",
             // "task": "clean",
             "label": "Delete all",
-            "command": "./scripts/xmlatex",
-            "windows": {
-                "command": ".\\scripts\\xmlatex.bat"
-            },
             "args": [
                 "clean"
             ],
-            "problemMatcher": []
         },
     ],
     "inputs": [
@@ -143,5 +99,10 @@
           "args": [ "http://localhost:2000/test" ],
 
         }
-    ]    
+    ],
+    "options": {
+        "env": {
+          "PATH": "/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:./scripts"  
+        }
+      },    
 }
